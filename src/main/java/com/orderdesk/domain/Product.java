@@ -31,6 +31,7 @@ public class Product {
     private BigDecimal price;
 
     @Min(0)
+    @com.fasterxml.jackson.annotation.JsonIgnore
     @Column(name = "stock")
     private int stock;
 
