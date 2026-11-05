@@ -18,6 +18,6 @@ class PricingServiceTest {
         OrderItem item = new OrderItem();
         item.setQuantity(2);
         item.setUnitPrice(new BigDecimal("10.00"));
-        assertThat(new PricingService().orderTotal(gold, List.of(item))).isEqualByComparingTo("19.00");
+        assertThat(new PricingService().orderTotal(gold, List.of(item))).isEqualByComparingTo(new BigDecimal("19.00"));
     }
 }
