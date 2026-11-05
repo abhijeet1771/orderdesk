@@ -5,7 +5,7 @@
     <li><a routerLink="/customers" routerLinkActive="active">Customers</a></li>
     <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
     <li><a routerLink="/orders" routerLinkActive="active">Orders</a></li>
-    @if (session.hasRole('MANAGER')) {
+    @if (session.hasRole('ADMIN')) {
       <li><a routerLink="/reports" routerLinkActive="active">Reports</a></li>
     }
   </ul>
