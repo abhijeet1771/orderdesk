@@ -13,7 +13,7 @@ spring:
     port: 587
 
 orderdesk:
-  page-size: 20
+  page-size: 50
   currency: EUR
   low-stock-threshold: 5
   stock-alert-cron: "0 0 7 * * MON-FRI"
