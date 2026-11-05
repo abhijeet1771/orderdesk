@@ -9,5 +9,5 @@ import java.util.List;
 public record CreateOrderRequest(
     @NotNull Long customerId,
     @NotEmpty List<@Valid OrderLineRequest> lines,
-    @Size(max = 500) String note
+    @Size(max = 200) String note
 ) {}
