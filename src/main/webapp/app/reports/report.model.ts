@@ -1,5 +1,5 @@
 export interface ITopProduct {
-  sku: string;
+  code: string;
   name: string;
   quantity: number;
 }
