@@ -7,7 +7,7 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   const router = inject(Router);
   return next(req).pipe(
     catchError((err: HttpErrorResponse) => {
-      if (err.status === 401) {
+      if (err.status === 401 || err.status === 403) {
         router.navigateByUrl('/');
       }
       return throwError(() => err);
