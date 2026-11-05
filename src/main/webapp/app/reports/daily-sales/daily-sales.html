@@ -11,9 +11,9 @@
       </tr>
     </thead>
     <tbody>
-      @for (t of s.top; track t.sku) {
+      @for (t of s.top; track t.code) {
         <tr>
-          <td>{{ t.sku }}</td>
+          <td>{{ t.code }}</td>
           <td>{{ t.name }}</td>
           <td>{{ t.quantity }}</td>
         </tr>

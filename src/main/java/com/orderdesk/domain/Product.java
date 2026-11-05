@@ -19,6 +19,7 @@ public class Product {
     @NotBlank
     @Size(max = 32)
     @Column(name = "sku", nullable = false, unique = true)
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     private String sku;
 
     @NotBlank
