@@ -17,7 +17,7 @@ public class InventoryService {
         if (product.getStock() < quantity) {
             throw new IllegalStateException("Not enough stock for " + product.getSku());
         }
-        product.setStock(product.getStock() - quantity);
+        product.setStock(product.getStock());
         products.save(product);
     }
 
