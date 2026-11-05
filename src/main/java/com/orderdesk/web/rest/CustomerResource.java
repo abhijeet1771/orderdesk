@@ -11,30 +11,30 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/customers")
 public class CustomerResource {
 
-    private final CustomerRepository customers;
+  private final CustomerRepository customers;
 
-    public CustomerResource(CustomerRepository customers) {
-        this.customers = customers;
-    }
+  public CustomerResource(CustomerRepository customers) {
+    this.customers = customers;
+  }
 
-    @GetMapping
-    public List<Customer> list() {
-        return customers.findAll();
-    }
+  @GetMapping
+  public List<Customer> list() {
+    return customers.findAll();
+  }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Customer> get(@PathVariable Long id) {
-        return ResponseEntity.of(customers.findById(id));
-    }
+  @GetMapping("/{id}")
+  public ResponseEntity<Customer> get(@PathVariable Long id) {
+    return ResponseEntity.of(customers.findById(id));
+  }
 
-    @PostMapping
-    public Customer create(@Valid @RequestBody Customer customer) {
-        return customers.save(customer);
-    }
+  @PostMapping
+  public Customer create(@Valid @RequestBody Customer customer) {
+    return customers.save(customer);
+  }
 
-    @PutMapping("/{id}")
-    public Customer update(@PathVariable Long id, @Valid @RequestBody Customer customer) {
-        customer.setId(id);
-        return customers.save(customer);
-    }
+  @PutMapping("/{id}")
+  public Customer update(@PathVariable Long id, @Valid @RequestBody Customer customer) {
+    customer.setId(id);
+    return customers.save(customer);
+  }
 }

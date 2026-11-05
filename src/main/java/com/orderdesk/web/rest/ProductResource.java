@@ -14,32 +14,32 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/products")
 public class ProductResource {
 
-    private final ProductRepository products;
-    private final OrderDeskProperties properties;
+  private final ProductRepository products;
+  private final OrderDeskProperties properties;
 
-    public ProductResource(ProductRepository products, OrderDeskProperties properties) {
-        this.products = products;
-        this.properties = properties;
-    }
+  public ProductResource(ProductRepository products, OrderDeskProperties properties) {
+    this.products = products;
+    this.properties = properties;
+  }
 
-    @GetMapping
-    public List<Product> list(@RequestParam(defaultValue = "0") int page) {
-        return products.findAll(PageRequest.of(page, properties.pageSize(), Sort.by("name"))).getContent();
-    }
+  @GetMapping
+  public List<Product> list(@RequestParam(defaultValue = "0") int page) {
+    return products.findAll(PageRequest.of(page, properties.pageSize(), Sort.by("name"))).getContent();
+  }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Product> get(@PathVariable Long id) {
-        return ResponseEntity.of(products.findById(id));
-    }
+  @GetMapping("/{id}")
+  public ResponseEntity<Product> get(@PathVariable Long id) {
+    return ResponseEntity.of(products.findById(id));
+  }
 
-    @PostMapping
-    public Product create(@Valid @RequestBody Product product) {
-        return products.save(product);
-    }
+  @PostMapping
+  public Product create(@Valid @RequestBody Product product) {
+    return products.save(product);
+  }
 
-    @PutMapping("/{id}")
-    public Product update(@PathVariable Long id, @Valid @RequestBody Product product) {
-        product.setId(id);
-        return products.save(product);
-    }
+  @PutMapping("/{id}")
+  public Product update(@PathVariable Long id, @Valid @RequestBody Product product) {
+    product.setId(id);
+    return products.save(product);
+  }
 }

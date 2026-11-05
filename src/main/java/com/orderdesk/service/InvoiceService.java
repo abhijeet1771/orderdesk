@@ -12,22 +12,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class InvoiceService {
 
-    private final InvoiceRepository invoices;
-    private final OrderRepository orders;
+  private final InvoiceRepository invoices;
+  private final OrderRepository orders;
 
-    public InvoiceService(InvoiceRepository invoices, OrderRepository orders) {
-        this.invoices = invoices;
-        this.orders = orders;
-    }
+  public InvoiceService(InvoiceRepository invoices, OrderRepository orders) {
+    this.invoices = invoices;
+    this.orders = orders;
+  }
 
-    @EventListener
-    public void onOrderPlaced(OrderPlacedEvent event) {
-        Order order = orders.findById(event.orderId()).orElseThrow();
-        Invoice invoice = new Invoice();
-        invoice.setOrder(order);
-        invoice.setNumber("INV-" + order.getId());
-        invoice.setIssuedAt(Instant.now());
-        invoice.setAmount(order.getTotal());
-        invoices.save(invoice);
-    }
+  @EventListener
+  public void onOrderPlaced(OrderPlacedEvent event) {
+    Order order = orders.findById(event.orderId()).orElseThrow();
+    Invoice invoice = new Invoice();
+    invoice.setOrder(order);
+    invoice.setNumber("INV-" + order.getId());
+    invoice.setIssuedAt(Instant.now());
+    invoice.setAmount(order.getTotal());
+    invoices.save(invoice);
+  }
 }

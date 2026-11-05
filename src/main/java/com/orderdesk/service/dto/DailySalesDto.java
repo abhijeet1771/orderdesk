@@ -6,5 +6,5 @@ import java.util.List;
 
 public record DailySalesDto(LocalDate day, int orders, BigDecimal revenue, List<TopProduct> top) {
 
-    public record TopProduct(String sku, String name, int quantity) {}
+  public record TopProduct(String sku, String name, int quantity) {}
 }

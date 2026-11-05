@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Size;
 import java.util.List;
 
 public record CreateOrderRequest(
-    @NotNull Long customerId,
-    @NotEmpty List<@Valid OrderLineRequest> lines,
-    @Size(max = 500) String note
+  @NotNull Long customerId,
+  @NotEmpty List<@Valid OrderLineRequest> lines,
+  @Size(max = 500) String note
 ) {}

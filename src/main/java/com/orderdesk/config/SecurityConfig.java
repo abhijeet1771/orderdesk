@@ -9,15 +9,15 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-            .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/reports/**").hasAnyRole("MANAGER", "ADMIN")
-                .requestMatchers("/api/**").authenticated()
-                .anyRequest().permitAll())
-            .httpBasic(Customizer.withDefaults());
-        return http.build();
-    }
+  @Bean
+  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    http
+      .csrf(csrf -> csrf.disable())
+      .authorizeHttpRequests(auth -> auth
+        .requestMatchers("/api/reports/**").hasAnyRole("MANAGER", "ADMIN")
+        .requestMatchers("/api/**").authenticated()
+        .anyRequest().permitAll())
+      .httpBasic(Customizer.withDefaults());
+    return http.build();
+  }
 }

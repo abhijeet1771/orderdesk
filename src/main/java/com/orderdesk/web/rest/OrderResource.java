@@ -12,29 +12,29 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/orders")
 public class OrderResource {
 
-    private final OrderService orders;
+  private final OrderService orders;
 
-    public OrderResource(OrderService orders) {
-        this.orders = orders;
-    }
+  public OrderResource(OrderService orders) {
+    this.orders = orders;
+  }
 
-    @GetMapping
-    public List<OrderSummaryDto> list() {
-        return orders.list();
-    }
+  @GetMapping
+  public List<OrderSummaryDto> list() {
+    return orders.list();
+  }
 
-    @GetMapping("/{id}")
-    public Order get(@PathVariable Long id) {
-        return orders.find(id);
-    }
+  @GetMapping("/{id}")
+  public Order get(@PathVariable Long id) {
+    return orders.find(id);
+  }
 
-    @PostMapping
-    public Order create(@Valid @RequestBody CreateOrderRequest request) {
-        return orders.create(request);
-    }
+  @PostMapping
+  public Order create(@Valid @RequestBody CreateOrderRequest request) {
+    return orders.create(request);
+  }
 
-    @PostMapping("/{id}/cancel")
-    public Order cancel(@PathVariable Long id) {
-        return orders.cancel(id);
-    }
+  @PostMapping("/{id}/cancel")
+  public Order cancel(@PathVariable Long id) {
+    return orders.cancel(id);
+  }
 }
