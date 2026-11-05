@@ -6,7 +6,7 @@ import { OrderStatus } from '../../orders/order.model';
   template: `
     @switch (status()) {
       @case ('NEW') { <span class="badge new">New</span> }
-      @case ('PAID') { <span class="badge paid">Paid</span> }
+      @case ('PAID') { <span class="badge paid">Payment received</span> }
       @case ('SHIPPED') { <span class="badge shipped">Shipped</span> }
       @case ('CANCELLED') { <span class="badge cancelled">Cancelled</span> }
     }
@@ -14,7 +14,7 @@ import { OrderStatus } from '../../orders/order.model';
   styles: [
     `
       .badge { padding: 2px 8px; border-radius: 10px; font-size: 12px; }
-      .paid { background: #e3f1e5; }
+      .paid { background: #c8e6c9; font-weight: 600; }
       .cancelled { background: #fcebe9; }
     `,
   ],
