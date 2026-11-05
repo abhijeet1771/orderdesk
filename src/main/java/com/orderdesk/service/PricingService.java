@@ -21,7 +21,7 @@ public class PricingService {
             .map(i -> i.getUnitPrice().multiply(BigDecimal.valueOf(i.getQuantity())))
             .reduce(BigDecimal.ZERO, BigDecimal::add);
         if (customer.getTier() == CustomerTier.GOLD) {
-            sum = sum.multiply(new BigDecimal("0.95"));
+            sum = sum.multiply(new BigDecimal("0.90"));
         }
         return sum.setScale(2, RoundingMode.HALF_UP);
     }
