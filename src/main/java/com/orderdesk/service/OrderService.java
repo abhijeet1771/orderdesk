@@ -56,7 +56,6 @@ public class OrderService {
         }
         order.setTotal(pricing.orderTotal(customer, order.getItems()));
         Order saved = orders.save(order);
-        events.publishEvent(new OrderPlacedEvent(saved.getId()));
         return saved;
     }
 
