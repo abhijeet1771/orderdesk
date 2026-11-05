@@ -33,7 +33,7 @@ public class OrderResource {
         return orders.create(request);
     }
 
-    @PostMapping("/{id}/cancel")
+    @PatchMapping("/{id}/cancellation")
     public Order cancel(@PathVariable Long id) {
         return orders.cancel(id);
     }
