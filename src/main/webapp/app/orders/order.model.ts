@@ -5,7 +5,7 @@ export type OrderStatus = 'NEW' | 'PAID' | 'SHIPPED' | 'CANCELLED';
 
 export interface IOrderItem {
   id: number;
-  product: Pick<IProduct, 'id' | 'sku' | 'name' | 'price'>;
+  product: Pick<IProduct, 'id' | 'sku' | 'title' | 'price'>;
   quantity: number;
   unitPrice: number;
 }

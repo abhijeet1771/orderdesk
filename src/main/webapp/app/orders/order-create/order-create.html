@@ -12,7 +12,7 @@
         <label [for]="'product' + i">Product</label>
         <select [id]="'product' + i" formControlName="productId">
           @for (p of products.products.value() ?? []; track p.id) {
-            <option [ngValue]="p.id">{{ p.name }} ({{ p.sku }})</option>
+            <option [ngValue]="p.id">{{ p.title }} ({{ p.sku }})</option>
           }
         </select>
         <input type="number" formControlName="quantity" min="1" max="99" />

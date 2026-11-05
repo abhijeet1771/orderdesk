@@ -13,7 +13,7 @@
     @for (product of products(); track product.id) {
       <tr [class.inactive]="!product.active">
         <td>{{ product.sku }}</td>
-        <td>{{ product.name }}</td>
+        <td>{{ product.title }}</td>
         <td>{{ product.price | money }}</td>
         <td [class.low]="product.stock < 5">{{ product.stock }}</td>
         <td><a [routerLink]="['/products', product.id, 'edit']">Edit</a></td>
