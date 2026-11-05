@@ -19,6 +19,7 @@ public class Customer {
     @NotBlank
     @Size(max = 80)
     @Column(name = "name", nullable = false)
+    @com.fasterxml.jackson.annotation.JsonProperty("fullName")
     private String name;
 
     @NotBlank
