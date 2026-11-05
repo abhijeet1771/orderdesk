@@ -19,7 +19,8 @@ public class Customer {
     @NotBlank
     @Size(max = 80)
     @Column(name = "name", nullable = false)
-    private String name;
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    private String fullName;
 
     @NotBlank
     @Email
@@ -40,8 +41,8 @@ public class Customer {
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public String getFullName() { return fullName; }
+    public void setFullName(String fullName) { this.fullName = fullName; }
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
     public String getPhone() { return phone; }

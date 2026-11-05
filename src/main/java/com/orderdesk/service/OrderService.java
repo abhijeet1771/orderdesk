@@ -75,7 +75,7 @@ public class OrderService {
     @Transactional(readOnly = true)
     public List<OrderSummaryDto> list() {
         return orders.findAll().stream()
-            .map(o -> new OrderSummaryDto(o.getId(), o.getCustomer().getName(), o.getStatus(), o.getTotal(), o.getPlacedAt()))
+            .map(o -> new OrderSummaryDto(o.getId(), o.getCustomer().getFullName(), o.getStatus(), o.getTotal(), o.getPlacedAt()))
             .toList();
     }
 
