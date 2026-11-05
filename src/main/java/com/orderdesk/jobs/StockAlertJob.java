@@ -11,21 +11,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class StockAlertJob {
 
-    private final ProductRepository products;
-    private final NotificationService notifications;
-    private final OrderDeskProperties properties;
+  private final ProductRepository products;
+  private final NotificationService notifications;
+  private final OrderDeskProperties properties;
 
-    public StockAlertJob(ProductRepository products, NotificationService notifications, OrderDeskProperties properties) {
-        this.products = products;
-        this.notifications = notifications;
-        this.properties = properties;
-    }
+  public StockAlertJob(ProductRepository products, NotificationService notifications, OrderDeskProperties properties) {
+    this.products = products;
+    this.notifications = notifications;
+    this.properties = properties;
+  }
 
-    @Scheduled(cron = "${orderdesk.stock-alert-cron}")
-    public void alert() {
-        List<Product> low = products.findByStockLessThan(properties.lowStockThreshold());
-        if (!low.isEmpty()) {
-            notifications.lowStock(low);
-        }
+  @Scheduled(cron = "${orderdesk.stock-alert-cron}")
+  public void alert() {
+    List<Product> low = products.findByStockLessThan(properties.lowStockThreshold());
+    if (!low.isEmpty()) {
+      notifications.lowStock(low);
     }
+  }
 }

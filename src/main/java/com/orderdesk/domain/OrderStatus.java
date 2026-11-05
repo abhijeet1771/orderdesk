@@ -1,8 +1,8 @@
 package com.orderdesk.domain;
 
 public enum OrderStatus {
-    NEW,
-    PAID,
-    SHIPPED,
-    CANCELLED
+  NEW,
+  PAID,
+  SHIPPED,
+  CANCELLED
 }

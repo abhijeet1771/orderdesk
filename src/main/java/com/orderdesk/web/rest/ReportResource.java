@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/reports")
 public class ReportResource {
 
-    private final ReportService reports;
+  private final ReportService reports;
 
-    public ReportResource(ReportService reports) {
-        this.reports = reports;
-    }
+  public ReportResource(ReportService reports) {
+    this.reports = reports;
+  }
 
-    @GetMapping("/daily-sales")
-    public DailySalesDto dailySales(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate day) {
-        return reports.dailySales(day);
-    }
+  @GetMapping("/daily-sales")
+  public DailySalesDto dailySales(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate day) {
+    return reports.dailySales(day);
+  }
 }

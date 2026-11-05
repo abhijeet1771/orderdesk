@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ConfigurationPropertiesScan
 public class OrderDeskApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(OrderDeskApplication.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(OrderDeskApplication.class, args);
+  }
 }
