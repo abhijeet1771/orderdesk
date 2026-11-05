@@ -1,7 +1,7 @@
 <h2>{{ product() ? 'Edit product' : 'New product' }}</h2>
 <form [formGroup]="form" (ngSubmit)="save()">
   <label for="sku">SKU</label>
-  <input id="sku" formControlName="sku" />
+  <input id="sku" formControlName="code" />
   <label for="pname">Name</label>
   <input id="pname" formControlName="name" />
   <label for="price">Price</label>

@@ -20,7 +20,7 @@
   <tbody>
     @for (item of o.items; track item.id) {
       <tr>
-        <td>{{ item.product.sku }}</td>
+        <td>{{ item.product.code }}</td>
         <td>{{ item.product.name }}</td>
         <td>{{ item.quantity }}</td>
         <td>{{ item.unitPrice | money }}</td>

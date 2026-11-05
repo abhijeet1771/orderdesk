@@ -16,7 +16,7 @@ export class ProductEdit implements OnInit {
   readonly product = input<IProduct>();
 
   readonly form = this.fb.group({
-    sku: ['', [Validators.required, Validators.maxLength(32)]],
+    code: ['', [Validators.required, Validators.maxLength(32)]],
     name: ['', Validators.required],
     price: [0, [Validators.required, Validators.min(0.01)]],
     stock: [0, Validators.min(0)],
