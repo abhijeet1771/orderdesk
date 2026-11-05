@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { adminGuard } from './core/auth/admin.guard';
 
 export const routes: Routes = [
   {
@@ -18,12 +17,6 @@ export const routes: Routes = [
   {
     path: 'orders',
     loadChildren: () => import('./orders/orders.routes'),
-  },
-  {
-    path: 'reports',
-    canActivate: [adminGuard],
-    loadComponent: () => import('./reports/daily-sales/daily-sales').then((m) => m.DailySales),
-    title: 'Reports',
   },
   { path: '**', redirectTo: '' },
 ];
